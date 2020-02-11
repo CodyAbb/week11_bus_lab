@@ -16,8 +16,9 @@ public class Bus {
         return this.passengers.size();
     }
 
-    public void addPassenger(Passenger passenger) {
-        if (this.passengers.size() < this.capacity){
+    public void removePassengerFromBusStop(BusStop busStop) {
+        if (this.passengers.size() < this.capacity && busStop.numberOfPassengers() > 0){
+            Passenger passenger = busStop.removePassenger();
             this.passengers.add(passenger);
         }
     }
